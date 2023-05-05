@@ -1,0 +1,79 @@
+:root {
+  --button_top: 5%;
+  --score_top: 10%;
+  --button_right: 51%;
+  --score_right: 52%;
+  --scale: 1;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: powderblue;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Varela Round';
+  font-size: calc(22px * var(--scale));
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#start-button {
+  position: fixed;
+  top: var(--button_top);
+  right: var(--button_right);
+  border-radius: 25px;
+
+}
+
+h3 {
+  position: fixed;
+  top:  var(--score_top);
+  right: var(--score_right);
+}
+
+.grid {
+  width: calc(200px * var(--scale));
+  height: calc(400px * var(--scale));
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(96, 172, 216);
+
+  
+}
+
+.grid div{
+  height: calc(20px * var(--scale));
+  width: calc(20px * var(--scale));
+  text-align: center;
+}
+
+.tetromino {
+  background-color: blue;
+}
+
+
+.mini-grid {
+  margin-left: 50px;
+  width: calc(80px * var(--scale));
+  height:calc(80px * var(--scale));
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(209, 165, 89);
+
+}
+
+.mini-grid div {
+  height: calc(20px * var(--scale));
+  width: calc(20px * var(--scale));
+}
+
