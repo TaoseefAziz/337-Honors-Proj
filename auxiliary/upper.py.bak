@@ -1,0 +1,4 @@
+with open('input.txt', 'r') as f_in:
+    with open('output.txt', 'w') as f_out:
+        for line in f_in:
+            f_out.write(line.upper())
