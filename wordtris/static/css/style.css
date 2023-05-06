@@ -25,6 +25,9 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
+  /* Overwrite bootstrap styling */
+  line-height: 1em;
 }
 
 #start-button {

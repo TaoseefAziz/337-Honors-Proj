@@ -16,7 +16,6 @@ class Game(models.Model):
     date_played = models.DateField(default=datetime.date.today, blank=True)
     player = models.ForeignKey(Player, blank='True',null='True',on_delete=models.CASCADE)
 
-
     def __str__(self):
         return f"Score: {self.score} Words Matched: {self.words_matched} Date Played: {self.date_played}" 
 
