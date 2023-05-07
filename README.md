@@ -67,3 +67,4 @@ Reference sheet https://codemy.com/books/django-quick-reference-guide.pdf
 Max Goodridge @ https://www.youtube.com/@MaxGoodridgeTech 
 Video on saving forms https://youtu.be/qwE9TFNub84 
 Free code camp: Code Tetris: JavaScript Tutorial for Beginners @ https://www.youtube.com/watch?v=rAUn1Lom6dw
+gokhanyavas for their word list https://github.com/gokhanyavas/Oxford-3000-Word-List/blob/master/Oxford%203000%20Word%20List%20No%20Spaces.txt
