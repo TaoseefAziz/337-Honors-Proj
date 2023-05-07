@@ -4,7 +4,6 @@ from .models import Player
 
 # Register your models here.
 
-admin.site.register(Player)
 #admin.site.register(Game)
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
