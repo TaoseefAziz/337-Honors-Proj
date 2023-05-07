@@ -44,21 +44,21 @@ The point values are as follows:
 
 ## How to run the project
 
-INSTALL VIRTUALENV: pip install virtualenv
-START VIRTUALENV POWERSHELL: virtualev . 
-(first be sure to Set-ExecutionPolicy Unrestricted in powershell)
-START VIRTUALENV GITBASH: python -m venv nameofVirtualenv
-ACTIVATE VIRTUALENV POWERSHELL: ./Scripts/activate 
-(sometimes . ./Scripts/activate)
-ACTIVATE VIRTUALENV GITBASH: source virtualenvDIR/Scripts/activate
-ACTIVATE VIRTUALENV MAC: source bin/activate
-INSTALL DJANGO INSIDE VIRTUALENV: pip install django
+- INSTALL VIRTUALENV: pip install virtualenv
+- START VIRTUALENV 
+  - POWERSHELL: virtualev . (first be sure to Set-ExecutionPolicy Unrestricted in powershell)
+  - START VIRTUALENV GITBASH: python -m venv nameofVirtualenv
+- ACTIVATE VIRTUALENV
+  -  POWERSHELL: ./Scripts/activate (sometimes . ./Scripts/activate)
+  -  ACTIVATE VIRTUALENV GITBASH: source virtualenvDIR/Scripts/activate
+  -  ACTIVATE VIRTUALENV MAC: source bin/activate
+- INSTALL DJANGO INSIDE VIRTUALENV: pip install django
 
-Then unsure you are at the folder with manage.py in it and run:
-python manage.py runserver
+Then ensure you are at the folder with manage.py in it and run:
+- python manage.py runserver
 
 And later to deactivate the virtual environment once done:
-DEACTIVATE VIRTUALENV: deactivate
+- DEACTIVATE VIRTUALENV: deactivate
 
 ## Credits
 - John Elder https://www.youtube.com/@Codemycom and @ https://codemy.com/, his playlist, and reference sheet.
