@@ -370,7 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('saving score')
     var form = document.createElement("form");
     var score = document.createElement("input");  
-    var player = document.createElement("input");  
     // player created in views.py
 
     form.method = "POST";
@@ -378,11 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     score.value= document.getElementById('score').innerText;
     score.name="score";
-    player.name="player";
     form.appendChild(score);
 
-    // empty initially
-    form.appendChild(player);
     document.body.appendChild(form);
 
     form.submit();
