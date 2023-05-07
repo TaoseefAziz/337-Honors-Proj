@@ -7,6 +7,6 @@ class GameForm(forms.ModelForm):
     class Meta:
         # bound to game model
         model = Game
-        fields = ('score',)
+        fields = ('score','words_matched','longest_word',)
         widgets = {'score': forms.HiddenInput()}
         

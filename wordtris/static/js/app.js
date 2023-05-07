@@ -2,12 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   let squares = Array.from(document.querySelectorAll('.grid div'))
   const scoreDisplay = document.querySelector('#score')
+  const totalMatches = document.querySelector('#total_words')
+  const longest = document.querySelector('#longest_word')
   const msg = document.querySelector('#msg')
+  const most_valuable_word = ""
   const startBtn = document.querySelector('#start-button')
   const width = 10
   let nextRandom = 0
   let timerId
   let score = 0
+  let totalMatchesInt = 0
   var currentchr = ""
   const colors = [
     'DarkOliveGreen',
@@ -286,6 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
           // matched a substring with word in dict, dont need to search for more
           if(dictionary.includes(substringsListDesc[j])) {
             console.log('found match')
+            totalMatchesInt += 1
+            totalMatches.innerText =  totalMatchesInt
+            updatelongest(substringsListDesc[j])
             addMatchedWord(substringsListDesc[j])
             score += getScrabblePoints(substringsListDesc[j])
             scoreDisplay.innerHTML = score
@@ -371,14 +378,23 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('saving score')
     var form = document.createElement("form");
     var score = document.createElement("input");  
+    var wordsmatched = document.createElement("input");  
+    var longestword = document.createElement("input");  
+
     // player created in views.py
 
     form.method = "POST";
     form.action = "add_game";   
 
-    score.value= document.getElementById('score').innerText;
+    score.value = document.getElementById('score').innerText;
+    wordsmatched.value = document.getElementById('total_words').innerText;
+    longestword.value =  document.getElementById('longest_word').innerText;
+    wordsmatched.name = "words_matched"
     score.name="score";
+    longestword.name = "longest_word";
     form.appendChild(score);
+    form.appendChild(wordsmatched);
+    form.appendChild(longestword);
 
     document.body.appendChild(form);
 
@@ -392,6 +408,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let wordsDiv = document.getElementById('matched_words')
     wordsDiv.innerHTML = "<div>"+word+"</div>" + wordsDiv.innerHTML
     wordsDiv.innerHTML = getTop10Divs();
+  }
+
+  function updatelongest(str) {
+    if(str.length > longest.innerText.length) {
+      longest.innerHTML = str;
+    }
   }
 
   function getTop10Divs() {

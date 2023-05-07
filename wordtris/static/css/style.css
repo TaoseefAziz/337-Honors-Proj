@@ -1,10 +1,10 @@
 :root {
   --button_top: 15%;
   --save_button_top: 10%;
-  --score_top: 20%;
+  --data_top: 20%;
   --content_top: 30%;
   --button_right: 50%;
-  --score_right: 50%;
+  --data_right: 53%;
   --msg_right: 45%;
 
   --content_right: 24%;
@@ -74,17 +74,12 @@ html, body {
   border-radius: 25px;
 }
 
-h3 {
-  position: fixed;
-  top:  var(--score_top);
-  right: var(--score_right);
+#data {
+  position: relative;
+  top: 20%;
+  right: 0%;
 }
 
-#msg {
-  position: fixed;
-  top:  var(--score_top);
-  right: var(--msg_right);
-}
 
 .grid {
   width: calc(200px * var(--scale));

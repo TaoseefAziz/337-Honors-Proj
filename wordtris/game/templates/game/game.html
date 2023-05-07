@@ -5,43 +5,54 @@ input, form {
 }
 </style>
 
+<div class="container">
 {% block content %}
 
     {% if user.is_authenticated %}
-      <h3>Score:
-        <span id="score">0</span>
-      </h3>
-      <h3 id="msg"><h3>
-      <button id="start-button">Start/Pause</button>
-      <button id="save-button">Save score</button>
+      
+
+        <div id="data" class="container">
+          <div>Score: <span id="score">0</span></div>
+          <div>Total word matches: <span id="total_words">0</span></div>
+          <div>Longest word: <span id="longest_word">0</span></div>
+          <span id="msg"><span>
+        </div>
+
+      
+      <div class="container">
+        <button id="start-button" type="button" class="btn btn-primary">Play/Pause</button>
+        <button id="save-button" type="button" class="btn btn-primary">Save</button>
+      </div>
 
       <div class="container">
-
-        <div id="matched_words">
-
-        </div>
-        
-        <div class="grid">
-          {% for i in n %}
-              <div ></div>
-          {% endfor %}
+          <div id="matched_words"></div>
           
-          {% for i in m %}
-              <div class="taken"></div>
-          {% endfor %}
-        </div>
+          <div class="grid">
+            {% for i in n %}
+                <div ></div>
+            {% endfor %}
+            
+            {% for i in m %}
+                <div class="taken"></div>
+            {% endfor %}
+          </div>
 
-        <div class="mini-grid">
-          {% for i in k %}
-              <div ></div>
-          {% endfor %}
-        </div>
+          <div class="mini-grid">
+            {% for i in k %}
+                <div ></div>
+            {% endfor %}
+          </div>
 
       </div>
     {% else %}
-      <h1>Login to play!</h1>
-      <a href="{% url 'login' %}">Login here</a>
+
+      <center class="container">
+        <h1>Login to play!</h1>
+        <div><a href="{% url 'login' %}">Login here</a></div>
+      </center>
+
     {% endif %}
-    
-              
+      
+
 {% endblock %}
+</div>

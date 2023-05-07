@@ -1,13 +1,23 @@
 {% extends 'game/base.html' %}
 {% block content %}       
-    
+    <center>
     <div class="container">
-    <h1>Wordtris Scores</h1>
-    <ul>
-    {% for score in scoresList %}
-        <li>{{ score }}</li>
-    {% endfor %}
-    </ul>
+            <header class="py-3 mb-4 border-bottom">
+            <div class="container d-flex flex-wrap justify-content-center">
+              <a href="#" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4">Wordtris Scores</span>
+              </a>
+            </div>
+          </header>
+        
+            <ul class="list-group list-group-flush">
+                {% for score in scoresList %}
+               
+                    <li class="list-group-item">{{ score }}</li>
+
+                {% endfor %}
+            </ul>
     </div>
+</center>
 
 {% endblock %}    

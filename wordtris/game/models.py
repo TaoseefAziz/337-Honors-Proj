@@ -14,8 +14,8 @@ class Game(models.Model):
 
     # blank=True => not required
     words_matched = models.IntegerField(null='True',blank=True)
-    longest_word = models.IntegerField(null='True',blank=True)
-    most_valuable_word = models.CharField(max_length=20,null='True', blank=True)
+    longest_word = models.CharField(max_length=10, null='True',blank=True)
+    most_valuable_word = models.CharField(max_length=10,null='True', blank=True)
     date_played = models.DateField(default=datetime.date.today,null='True', blank=True)
     player = models.ForeignKey(User, on_delete=models.CASCADE)
 
