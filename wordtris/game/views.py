@@ -26,8 +26,6 @@ def scores(request):
 
 @csrf_exempt
 def add_game(request):
-    submitted = False
-
     if request.method=='POST':
         form = GameForm(request.POST)
         if form.is_valid():
@@ -35,11 +33,5 @@ def add_game(request):
             formobj.player = request.user
             formobj.save()
             return redirect('game')
-    else:
-        form = GameForm(request.POST)
-        if 'submitted' in request.GET:
-            submitted = True
-
-    return render(request, 'game/add_game.html', {'form':form, 'submitted':submitted})
 
             

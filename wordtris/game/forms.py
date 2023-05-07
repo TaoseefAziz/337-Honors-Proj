@@ -8,3 +8,5 @@ class GameForm(forms.ModelForm):
         # bound to game model
         model = Game
         fields = ('score',)
+        widgets = {'score': forms.HiddenInput()}
+        
