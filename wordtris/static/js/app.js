@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.querySelector('#score')
   const totalMatches = document.querySelector('#total_words')
   const longest = document.querySelector('#longest_word')
+  const mostvaluable = document.querySelector('#most_valuable_word')
   const msg = document.querySelector('#msg')
-  const most_valuable_word = ""
   const startBtn = document.querySelector('#start-button')
   const width = 10
   let nextRandom = 0
@@ -293,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalMatchesInt += 1
             totalMatches.innerText =  totalMatchesInt
             updatelongest(substringsListDesc[j])
+            updatevaluable(substringsListDesc[j])
             addMatchedWord(substringsListDesc[j])
             score += getScrabblePoints(substringsListDesc[j])
             scoreDisplay.innerHTML = score
@@ -380,8 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
     var score = document.createElement("input");  
     var wordsmatched = document.createElement("input");  
     var longestword = document.createElement("input");  
+    var most_valuable_word = document.createElement("input");  
 
-    // player created in views.py
+    // NOTE: player created in views.py
 
     form.method = "POST";
     form.action = "add_game";   
@@ -389,12 +391,16 @@ document.addEventListener('DOMContentLoaded', () => {
     score.value = document.getElementById('score').innerText;
     wordsmatched.value = document.getElementById('total_words').innerText;
     longestword.value =  document.getElementById('longest_word').innerText;
+    most_valuable_word.value = document.getElementById('most_valuable_word').innerText;
+
     wordsmatched.name = "words_matched"
     score.name="score";
     longestword.name = "longest_word";
+    most_valuable_word.name = "most_valuable_word";
     form.appendChild(score);
     form.appendChild(wordsmatched);
     form.appendChild(longestword);
+    form.appendChild(most_valuable_word);
 
     document.body.appendChild(form);
 
@@ -413,6 +419,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function updatelongest(str) {
     if(str.length > longest.innerText.length) {
       longest.innerHTML = str;
+    }
+  }
+
+  function updatevaluable(str) {
+    if(getScrabblePoints(str) > getScrabblePoints(most_valuable_word)) {
+      mostvaluable.innerText = str;
     }
   }
 
