@@ -61,7 +61,7 @@ And later to deactivate the virtual environment once done:
 DEACTIVATE VIRTUALENV: deactivate
 
 ## Credits
-John Eldedr https://www.youtube.com/@Codemycom and @ https://codemy.com/, his playlist, and reference sheet.
+John Elder https://www.youtube.com/@Codemycom and @ https://codemy.com/, his playlist, and reference sheet.
 Playlist https://youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy 
 Reference sheet https://codemy.com/books/django-quick-reference-guide.pdf
 Max Goodridge @ https://www.youtube.com/@MaxGoodridgeTech 
