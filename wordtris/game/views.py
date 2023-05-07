@@ -3,7 +3,7 @@ from .forms import GameForm
 # references 'models' folder in current directory and the 'Game' class from models.py
 from .models import Game
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib import messages
+
 
 
 

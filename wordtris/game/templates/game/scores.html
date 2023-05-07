@@ -2,14 +2,12 @@
 {% block content %}       
 
     {% if user and user.is_authenticated %}
-            <ol class="list-group list-group-numbered"></ol>
+            <ul class="list-group list-group-numbered"></ol>
                 {% for score in scoresList %}
-               
-                  
                         <li class="list-group-item">{{ score }}</li>
                      
                 {% endfor %}
-            </ol>
+            </ul>
     {% else %}
 
         <center class="container">
