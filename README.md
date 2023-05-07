@@ -44,26 +44,27 @@ The point values are as follows:
 
 ## How to run the project
 
-INSTALL VIRTUALENV: pip install virtualenv
-START VIRTUALENV POWERSHELL: virtualev . 
-(first be sure to Set-ExecutionPolicy Unrestricted in powershell)
-START VIRTUALENV GITBASH: python -m venv nameofVirtualenv
-ACTIVATE VIRTUALENV POWERSHELL: ./Scripts/activate 
-(sometimes . ./Scripts/activate)
-ACTIVATE VIRTUALENV GITBASH: source virtualenvDIR/Scripts/activate
-ACTIVATE VIRTUALENV MAC: source bin/activate
-INSTALL DJANGO INSIDE VIRTUALENV: pip install django
+- INSTALL VIRTUALENV: pip install virtualenv
+- START VIRTUALENV 
+  - POWERSHELL: virtualev . (first be sure to Set-ExecutionPolicy Unrestricted in powershell)
+  - START VIRTUALENV GITBASH: python -m venv nameofVirtualenv
+- ACTIVATE VIRTUALENV
+  -  POWERSHELL: ./Scripts/activate (sometimes . ./Scripts/activate)
+  -  ACTIVATE VIRTUALENV GITBASH: source virtualenvDIR/Scripts/activate
+  -  ACTIVATE VIRTUALENV MAC: source bin/activate
+- INSTALL DJANGO INSIDE VIRTUALENV: pip install django
 
-Then unsure you are at the folder with manage.py in it and run:
-python manage.py runserver
+Then ensure you are at the folder with manage.py in it and run:
+- python manage.py runserver
 
 And later to deactivate the virtual environment once done:
-DEACTIVATE VIRTUALENV: deactivate
+- DEACTIVATE VIRTUALENV: deactivate
 
 ## Credits
-John Elder https://www.youtube.com/@Codemycom and @ https://codemy.com/, his playlist, and reference sheet.
-Playlist https://youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy 
-Reference sheet https://codemy.com/books/django-quick-reference-guide.pdf
-Max Goodridge @ https://www.youtube.com/@MaxGoodridgeTech 
-Video on saving forms https://youtu.be/qwE9TFNub84 
-Free code camp: Code Tetris: JavaScript Tutorial for Beginners @ https://www.youtube.com/watch?v=rAUn1Lom6dw
+- John Elder https://www.youtube.com/@Codemycom and @ https://codemy.com/, his playlist, and reference sheet.
+  - Playlist https://youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy 
+  - Reference sheet https://codemy.com/books/django-quick-reference-guide.pdf
+- Max Goodridge @ https://www.youtube.com/@MaxGoodridgeTech 
+  - Video on saving forms https://youtu.be/qwE9TFNub84 
+- Free code camp: Code Tetris: JavaScript Tutorial for Beginners @ https://www.youtube.com/watch?v=rAUn1Lom6dw
+- gokhanyavas for their word list https://github.com/gokhanyavas/Oxford-3000-Word-List/blob/master/Oxford%203000%20Word%20List%20No%20Spaces.txt
