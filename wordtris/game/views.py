@@ -26,21 +26,20 @@ def scores(request):
 
 @csrf_exempt
 def add_game(request):
+    submitted = False
 
-    def post(self, request):
-        print('POST REQ')
-        if request.user.is_authenticated:
-            form = GameForm(request.POST)
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.player = request.user
-
-                obj.save()
-                messages.success(request, ('Saved successfully!'))
-                #return redirect(request, 'game/add_game.html', {'form':obj})
+    if request.method=='POST':
+        form = GameForm(request.POST)
+        if form.is_valid():
+            formobj = form.save(commit=False)
+            formobj.player = request.user
+            formobj.save()
             return redirect('game')
-        else:
-            print("User not authenticated")
-            return redirect('login')
+    else:
+        form = GameForm(request.POST)
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'game/add_game.html', {'form':form, 'submitted':submitted})
 
             
