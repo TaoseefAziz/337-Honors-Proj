@@ -13,9 +13,21 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'scores' %}">Scores</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register_player' %}">Register</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+          {% endif %}
+
+
          
 
         </ul>
