@@ -25,9 +25,11 @@ def scores(request):
     return render(request, 'game/scores.html', {'scoresList': scoresList, 'num_scores': range(20)})
 
 def my_scores(request):
-    scoresList = Game.objects.all().filter(player=request.user).order_by('-score')[0:25]
-    return render(request, 'game/scores.html', {'scoresList': scoresList, 'num_scores':  range(20)})
-    
+    if request.user.username != "":
+        scoresList = Game.objects.all().filter(player=request.user).order_by('-score')[0:25]
+        return render(request, 'game/scores.html', {'scoresList': scoresList, 'num_scores':  range(20)})
+    else:
+        return render(request, 'game/scores_restricted.html')
 @csrf_exempt
 def add_game(request):
     if request.method=='POST':

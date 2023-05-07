@@ -8,9 +8,9 @@
   --msg_right: 45%;
 
   --content_right: 24%;
-  --words_right: 40%;
+  --words_right: 30%;
 
-  --scale: 1;
+  --scale: 1.5;
 }
 
 html, body {
@@ -23,7 +23,7 @@ html, body {
 * {
   box-sizing: border-box;
   font-family: 'Varela Round';
-  font-size: calc(22px * var(--scale));
+  font-size: calc(22px);
   font-weight: bold;
 }
 
@@ -76,8 +76,8 @@ html, body {
 
 #data {
   position: relative;
-  top: 20%;
-  right: 0%;
+  top: 30%;
+  right: 35%;
 }
 
 

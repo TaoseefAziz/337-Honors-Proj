@@ -249,23 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
 
       // full row fill deletion
-      if(row.every(index => squares[index].classList.contains('taken'))) {
-        score +=10
-        scoreDisplay.innerHTML = score
-        // 'remove' row by modifying html
-        row.forEach(index => {
-          squares[index].classList.remove('taken')
-          squares[index].classList.remove('tetromino')
-          squares[index].style.backgroundColor = ''
-          squares[index].innerText = ''
-        })
-        let squaresRemoved = squares.splice(i, width)
-        // append preexisting rows to "fresh" row
-        squares = squaresRemoved.concat(squares)
-        squares.forEach(cell => grid.appendChild(cell))
-      }
-      // some chars exist, check for word matches
-      else if (row.some(index => squares[index].innerHTML != '')) {
+      if (row.some(index => squares[index].innerHTML != '')) {
 
         // get text in row
         let rowText = []
@@ -312,9 +296,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             j++
         }
-
-
       }
+      else if(row.every(index => squares[index].classList.contains('taken'))) {
+        score +=10
+        scoreDisplay.innerHTML = score
+        // 'remove' row by modifying html
+        row.forEach(index => {
+          squares[index].classList.remove('taken')
+          squares[index].classList.remove('tetromino')
+          squares[index].style.backgroundColor = ''
+          squares[index].innerText = ''
+        })
+        let squaresRemoved = squares.splice(i, width)
+        // append preexisting rows to "fresh" row
+        squares = squaresRemoved.concat(squares)
+        squares.forEach(cell => grid.appendChild(cell))
+      }
+      // some chars exist, check for word matches
+      
     }
   }
 

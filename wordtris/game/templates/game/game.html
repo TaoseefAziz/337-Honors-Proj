@@ -11,14 +11,15 @@ input, form {
     {% if user.is_authenticated %}
       
 
-        <div id="data" class="container">
-          <div>Score: <span id="score">0</span></div>
-          <div>Total word matches: <span id="total_words">0</span></div>
-          <div>Longest word: <span id="longest_word">0</span></div>
-          <div>Most valuable word: <span id="most_valuable_word"></span></div>
-          <span id="msg"><span>
+        <div id="data" class="container">         
+            <ul class="list-group">
+              <li class="list-group-item"><div>   Score: <span id="score">0</span></div></li>
+              <li class="list-group-item"><div>   Total word matches:   <span id="total_words">0</span></div></li>
+              <li class="list-group-item"><div>   Longest word:   <span id="longest_word">0</span></div></li>
+              <li class="list-group-item"><div>   Most valuable word:   <span id="most_valuable_word"></span></div></li>
+              <li class="list-group-item"><span id="msg"><span></li>
+            </ul>
         </div>
-
       
       <div class="container">
         <button id="start-button" type="button" class="btn btn-primary">Play/Pause</button>

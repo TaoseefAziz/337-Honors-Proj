@@ -20,6 +20,6 @@ class Game(models.Model):
     player = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Player: {self.player.username} Score: {self.score} Words Matched: {self.words_matched} Date Played: {self.date_played}" 
+        return f"{self.player.username} scored {self.score} with {self.words_matched} word matches. Most valuable word was {self.most_valuable_word}, longest was {self.longest_word}. {self.date_played}" 
 
 

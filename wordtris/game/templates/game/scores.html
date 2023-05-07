@@ -1,23 +1,22 @@
 {% extends 'game/base.html' %}
 {% block content %}       
-    <center>
-    <div class="container">
-            <header class="py-3 mb-4 border-bottom">
-            <div class="container d-flex flex-wrap justify-content-center">
-              <a href="#" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
-                <span class="fs-4">Wordtris Scores</span>
-              </a>
-            </div>
-          </header>
-        
-            <ul class="list-group list-group-flush">
+
+    {% if user and user.is_authenticated %}
+            <ol class="list-group list-group-numbered"></ol>
                 {% for score in scoresList %}
                
-                    <li class="list-group-item">{{ score }}</li>
-
+                  
+                        <li class="list-group-item">{{ score }}</li>
+                     
                 {% endfor %}
-            </ul>
-    </div>
-</center>
+            </ol>
+    {% else %}
+
+        <center class="container">
+            <h1>Login to view scores!</h1>
+            <div><a href="{% url 'login' %}">Login here</a></div>
+        </center>
+
+    {% endif %}
 
 {% endblock %}    
