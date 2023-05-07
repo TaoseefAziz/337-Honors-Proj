@@ -23,6 +23,7 @@ def game(request):
 def scores(request):
     scoresList = Game.objects.all()
     return render(request, 'game/scores.html', {'scoresList': scoresList})
+    
 
 @csrf_exempt
 def add_game(request):
@@ -34,4 +35,6 @@ def add_game(request):
             formobj.save()
             return redirect('game')
 
+def help(request):
+    return render(request, 'game/help.html')
             

@@ -1,4 +1,9 @@
 {% extends 'game/base.html' %}
+<style>
+input, form {
+  visibility: hidden;
+}
+</style>
 
 {% block content %}
 
@@ -11,6 +16,10 @@
       <button id="save-button">Save score</button>
 
       <div class="container">
+
+        <div id="matched_words">
+
+        </div>
         
         <div class="grid">
           {% for i in n %}

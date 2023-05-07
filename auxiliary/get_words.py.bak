@@ -2,7 +2,7 @@ import urllib.request
 
 # URL of the English word list
 #url = 'https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt'
-url = 'https://github.com/gokhanyavas/Oxford-3000-Word-List/blob/master/Oxford%203000%20Word%20List%20No%20Spaces.txt'
+url = 'https://github.com/gokhanyavas/Oxford-3000-Word-List/blob/master/Oxford%203000%20Word%20List.txt'
 
 # Download the word list
 response = urllib.request.urlopen(url)

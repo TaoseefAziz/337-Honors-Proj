@@ -286,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // matched a substring with word in dict, dont need to search for more
           if(dictionary.includes(substringsListDesc[j])) {
             console.log('found match')
+            addMatchedWord(substringsListDesc[j])
             score += getScrabblePoints(substringsListDesc[j])
             scoreDisplay.innerHTML = score
             row.forEach(index => {
@@ -387,19 +388,29 @@ document.addEventListener('DOMContentLoaded', () => {
   save_btn.addEventListener('click', add_game);
   save_btn.addEventListener('click', ()=> {console.log('clicked')});
 
-  // function getCookie(c_name) {
-  //   if (document.cookie.length > 0)
-  //   {
-  //       c_start = document.cookie.indexOf(c_name + "=");
-  //       if (c_start != -1)
-  //       {
-  //           c_start = c_start + c_name.length + 1;
-  //           c_end = document.cookie.indexOf(";", c_start);
-  //           if (c_end == -1) c_end = document.cookie.length;
-  //           return unescape(document.cookie.substring(c_start,c_end));
-  //       }
-  //   }
-  //   return "";
-  // }
+  function addMatchedWord(word) {
+    let wordsDiv = document.getElementById('matched_words')
+    wordsDiv.innerHTML = "<div>"+word+"</div>" + wordsDiv.innerHTML
+    wordsDiv.innerHTML = getTop10Divs();
+  }
+
+  function getTop10Divs() {
+    // Get the container <div> element by its ID
+    const container = document.getElementById("matched_words");
+  
+    // Create an array to store the child <div> elements
+    const divs = [];
+  
+    // Loop over the child <div> elements and add them to the array
+    for (let i = 0; i < container.children.length; i++) {
+      divs.push(container.children[i].outerHTML);
+    }
+  
+    // Get the top 10 <div> elements
+    const top10Divs = divs.slice(0, 10);
+  
+    // Join the top 10 <div> elements into a string and return it
+    return top10Divs.join("");
+  }
 
 })
