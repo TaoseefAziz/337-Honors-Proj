@@ -1,15 +1,15 @@
 # 337-Honors-Proj
-##How to play
+## How to play
 Wordtris is a combination of tetris with word matching. You can choose to play like regular tetris with only full row fills, but you could also choose to create 3 letter or longer words for a much larger large score reward. Words are matched in the horizontal direction, the longer/more complicated the word, the greater the point reward.
 
 User registration is required to play and view your own scores.
 
-##Controls
+## Controls
 Press any key on your keyboard to select a character.
 Up arrow key → Rotate shape
 Left/Right/Down arrow keys → Move left/right/down
 
-##Scoring
+## Scoring
 
 Scoring is done similar to the way scrabble is scored with a multiplier. Each letter is worth a certain point, and the letter scores are aggregated and scaled (multiplied by 10) to get the total number of points for the word matched.
 
@@ -42,7 +42,7 @@ The point values are as follows:
   'Z': 10
 
 
-##How to run the project
+## How to run the project
 
 INSTALL VIRTUALENV: pip install virtualenv
 START VIRTUALENV POWERSHELL: virtualev . 
@@ -60,7 +60,7 @@ python manage.py runserver
 And later to deactivate the virtual environment once done:
 DEACTIVATE VIRTUALENV: deactivate
 
-##Credits
+## Credits
 John Eldedr https://www.youtube.com/@Codemycom and @ https://codemy.com/, his playlist, and reference sheet.
 Playlist https://youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy 
 Reference sheet https://codemy.com/books/django-quick-reference-guide.pdf
