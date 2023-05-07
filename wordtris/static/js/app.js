@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   let squares = Array.from(document.querySelectorAll('.grid div'))
   const scoreDisplay = document.querySelector('#score')
+  const msg = document.querySelector('#msg')
   const startBtn = document.querySelector('#start-button')
   const width = 10
   let nextRandom = 0
@@ -84,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //assign functions to keyCodes
   function control(e) {
-    if(scoreDisplay.innerHTML!='end') {
+    if(msg.innerHTML!='end') {
       if(e.keyCode === 37) {
         moveLeft()
       } else if (e.keyCode === 38) {
@@ -311,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //game over
   function gameOver() {
     if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-      scoreDisplay.innerHTML = 'end'
+      msg.innerHTML = 'end'
       clearInterval(timerId)
     }
   }
@@ -365,5 +366,44 @@ document.addEventListener('DOMContentLoaded', () => {
     return points * 10;
   }
   
-  
+  function add_game() {
+    console.log('saving score')
+    var form = document.createElement("form");
+    var score = document.createElement("input");  
+    var player = document.createElement("input");  
+    // player created in views.py
+
+    form.method = "POST";
+    form.action = "add_game";   
+
+    score.value= document.getElementById('score').innerText;
+    score.name="score";
+    player.name="player";
+    form.appendChild(score);
+
+    // empty initially
+    form.appendChild(player);
+    document.body.appendChild(form);
+
+    form.submit();
+  }
+  let save_btn = document.getElementById('save-button');
+  save_btn.addEventListener('click', add_game);
+  save_btn.addEventListener('click', ()=> {console.log('clicked')});
+
+  // function getCookie(c_name) {
+  //   if (document.cookie.length > 0)
+  //   {
+  //       c_start = document.cookie.indexOf(c_name + "=");
+  //       if (c_start != -1)
+  //       {
+  //           c_start = c_start + c_name.length + 1;
+  //           c_end = document.cookie.indexOf(";", c_start);
+  //           if (c_end == -1) c_end = document.cookie.length;
+  //           return unescape(document.cookie.substring(c_start,c_end));
+  //       }
+  //   }
+  //   return "";
+  // }
+
 })

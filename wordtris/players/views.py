@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 
-
 # Create your views here.
 def login_player(request):
     if request.method == "POST":

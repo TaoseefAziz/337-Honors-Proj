@@ -1,9 +1,12 @@
 :root {
   --button_top: 15%;
+  --save_button_top: 10%;
   --score_top: 20%;
   --content_top: 30%;
   --button_right: 50%;
   --score_right: 50%;
+  --msg_right: 45%;
+
   --content_right: 24%;
   --scale: 1;
 }
@@ -40,18 +43,31 @@ html, body {
   line-height: 1em;
 }
 
-#start-button {
+#start-button{
   position: fixed;
   top: var(--button_top);
   right: var(--button_right);
   border-radius: 25px;
+}
 
+#save-button {
+  position: fixed;
+  top: var(--save_button_top);
+
+  right: var(--button_right);
+  border-radius: 25px;
 }
 
 h3 {
   position: fixed;
   top:  var(--score_top);
   right: var(--score_right);
+}
+
+#msg {
+  position: fixed;
+  top:  var(--score_top);
+  right: var(--msg_right);
 }
 
 .grid {
