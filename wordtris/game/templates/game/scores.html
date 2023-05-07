@@ -1,7 +1,13 @@
 {% extends 'game/base.html' %}
-
-{% block content %}          
+{% block content %}       
+    
+    <div class="container">
     <h1>Wordtris Scores</h1>
+    <ul>
+    {% for score in scoresList %}
+        <li>{{ score }}</li>
+    {% endfor %}
+    </ul>
+    </div>
 
-    {{ scoresList }}
 {% endblock %}    

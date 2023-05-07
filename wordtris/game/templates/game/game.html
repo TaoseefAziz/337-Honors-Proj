@@ -1,4 +1,10 @@
 {% extends 'game/base.html' %}
+
+{% load static %}
+<script src="{% static 'js/dictionary.js' %}" charset="utf-8"></script>
+<script src="{% static 'js/app.js' %}" charset="utf-8"></script>
+<link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
+
 {% block content %}
 
     <h3>Score:<span id="score">0</span></h3>
