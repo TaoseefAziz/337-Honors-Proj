@@ -1,4 +1,5 @@
-# 337-Honors-Proj
+# Wordtris 
+### A 337-Honors-Project
 ## How to play
 Wordtris is a combination of tetris with word matching. You can choose to play like regular tetris with only full row fills, but you could also choose to create 3 letter or longer words for a much larger large score reward. Words are matched in the horizontal direction, the longer/more complicated the word, the greater the point reward.
 
